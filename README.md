@@ -17,9 +17,9 @@
 
 1. *Boundaries* - Something that was not clearly defined in the challenge was what a rover would do when it was instructed to go over a boundary. It could have either aborted the entire transmission, gone over the edge, or ignored commands that sent it over the edge. I chose to simply continue with the rest of the transmission and ignore commands that would have destroyed the rover.
 
-2. Transmission Errors - If there are 5 transmissions and one of them is invalid, it was assumed that the entire transmission is invalid. The other option is that the other 4 transmissions could have been sent to their respective rovers, but it was assumed that an error on one line could have meant lines were in the wrong place.
+2. *Transmission Errors* - If there are 5 transmissions and one of them is invalid, it was assumed that the entire transmission is invalid. The other option is that the other 4 transmissions could have been sent to their respective rovers, but it was assumed that an error on one line could have meant lines were in the wrong place.
 
-3. Test Cases -
+3. *Test Cases* - I have embedded test cases as a listing on the root of http://localhost:3000 that can be run along with their expected outputs.
 
 
 
