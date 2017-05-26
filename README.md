@@ -1,5 +1,5 @@
 # README
- This challenge is a solution to the problem found at <%= link_to "https://code.google.com/archive/p/marsrovertechchallenge/", "https://code.google.com/archive/p/marsrovertechchallenge/" %> and presented to Weddington Way. This challenge takes an input as a transmission that is then sent to rovers on Mars. The application then processes the transmission as instructions to the rover. The rover will then return it's final position and orientation as an output.
+ This challenge is a solution to the problem found at https://code.google.com/archive/p/marsrovertechchallenge/ and presented to Weddington Way. This challenge takes an input as a transmission that is then sent to rovers on Mars. The application then processes the transmission as instructions to the rover. The rover will then return it's final position and orientation as an output.
 
 ### Installation
     I built this as a simple rails application. To install this application:
