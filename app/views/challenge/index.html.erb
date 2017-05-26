@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Mars Rover Challenge</h1>
+      This challenge is a solution to the problem found at <%= link_to "https://code.google.com/archive/p/marsrovertechchallenge/", "https://code.google.com/archive/p/marsrovertechchallenge/" %> and presented to Weddington Way. This challenge takes an input as a transmission that is then sent to rovers on Mars. The application then processes the transmission as instructions to the rover. The rover will then return it's final position and orientation as an output.
+
+      <br><br>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Test Cases</h3>
+      <table class="table" style="font-size:10px;">
+        <tr>
+          <th>Input</th>
+          <th>Expected Output</th>
+        </tr>
+        <tr>
+          <td>
+            Standard:<br>
+            5 5<br>
+            1 2 N<br>
+            LMLMLMLMM<br>
+            3 3 E<br>
+            MMRMMRMRRM<br>
+          </td>
+          <td>
+            1 3 N<br>
+            5 1 E<br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Avoid Edge<br>
+            10 5<br>
+            5 1 N<br>
+            RRMMMLMMLMM<br>
+            9 9 S<br>
+            LMLMMLMRMLLMR<br>
+          </td>
+          <td>
+            7 2 S<br>
+            9 9 W<br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Four Rovers<br>
+            10 5<br>
+            1 2 N<br>
+            LMLMLMLMM<br>
+            3 3 E<br>
+            MMRMMRMRRM<br>
+            5 1 N<br>
+            RRMMMLMMLMM<br>
+            9 9 S<br>
+            LMLMMLMRMLLMR<br>
+          </td>
+          <td>
+            1 3 N<br>
+            5 1 E<br>
+            7 2 S<br>
+            9 9 W<br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Single Rover<br>
+            100 100<br>
+            50 50 E<br>
+            LMMMMRMLM<br>
+          </td>
+          <td>
+            51 54 N<br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Bad Transmission<br>
+            100 100<br>
+            50 50 E<br>
+            LMMXXXMLM<br>
+          </td>
+          <td>
+            TRANSMISSION FAILURE<br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Bad Transmission<br>
+            10 10 10 10<br>
+            5 5 N<br>
+            LRM<br>
+          </td>
+          <td>
+            TRANSMISSION FAILURE<br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Bad Transmission<br>
+            10 10<br>
+            5 5 N<br>
+            LRM<br>
+            5 5 N<br>
+          </td>
+          <td>
+            TRANSMISSION FAILURE<br>
+          </td>
+        </tr>
+
+      </table>
+
+
+    </div>
+    <div class="col-xs-6">
+      <form action="/" method="post">
+        <label>Enter transmission Input</label>
+        <textarea name="transmission" class="form-control" style="height:200px;"><%= params[:transmission] %></textarea>
+        <br>
+        <input type="submit" value="Send Transmission" class="form-control btn btn-primary">
+      </form>
+
+
+      <% if request.post? %>
+      <h3>Response</h3>
+        <% if @response %>
+          <%= @response %>
+        <% end %>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>

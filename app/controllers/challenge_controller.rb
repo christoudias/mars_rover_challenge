@@ -1,7 +1,17 @@
 class ChallengeController < ActionController::Base
 
   def index
-    render :text => "hello" and return
+    if request.post?
+      trans = request[:transmission]
+
+      @response = Mars::Communication.new(trans).send_transmission
+
+    end
+
+
+
+
+    render 'index', :layout => 'layouts/application'
   end
 
 end
